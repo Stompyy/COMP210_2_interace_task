@@ -4,7 +4,7 @@
 
 ## Augmented reality game for mobile devices
 
-Fight your stuff!
+### Fight your stuff!
 
 Use your mobile device's screen as a window into a world where enemies and bonuses spawn from the items and shapes in your environment.
 
