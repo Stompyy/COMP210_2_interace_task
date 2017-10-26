@@ -18,7 +18,8 @@ By identifying the shapes and relative size of items in your environment, enemy 
 
 ## Research
 
-Many augmented reality games are being released for mobile devices and this game takes inspiration from successes such as [Zombie Gunship Revenant AR](https://itunes.apple.com/us/app/zombie-gunship-revenant-ar/id1254976492?mt=8)
+Many augmented reality games are being released for mobile devices and this game takes inspiration from successes such as [Zombie Gunship Revenant AR](https://itunes.apple.com/us/app/zombie-gunship-revenant-ar/id1254976492?mt=8)  
+Link to YouTube video:  
 
 <a href="http://www.youtube.com/watch?feature=player_embedded&v=qPQuvQqKprQ" target="Zombie Gunship Revenant AR"><img src="http://img.youtube.com/vi/qPQuvQqKprQ/0.jpg" 
 alt="Zombie Gunship Revenant AR" width="480" height="360" border="10" /></a>
