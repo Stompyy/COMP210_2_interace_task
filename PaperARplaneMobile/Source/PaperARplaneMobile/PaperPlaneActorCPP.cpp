@@ -24,15 +24,19 @@ void APaperPlaneActorCPP::Tick(float DeltaTime)
 	Super::Tick(DeltaTime);
 }
 
-float APaperPlaneActorCPP::GetHeightAdjustedSpeed(float DeltaNormalisedHeight, float CurrentPlaneSpeed, float DeltaTime, float AccelerationModifier)
+// Changes current speed based on whether the plane is diving or climbing
+void APaperPlaneActorCPP::AdjustSpeedFromHeightChange(float DeltaNormalisedHeight, float DeltaTime)
 {
     if (DeltaNormalisedHeight < 0.0f)
+    // Diving
     {
-        return CurrentPlaneSpeed - (1.0f - CurrentPlaneSpeed) * DeltaNormalisedHeight * DeltaTime * AccelerationModifier;
+        CurrentSpeed = CurrentSpeed - (MaximumSpeed - CurrentSpeed) * DeltaNormalisedHeight * DeltaTime * AccelerationModifier;
+        
     }
-    else //return CurrentPlaneSpeed;
+    else
+    // Climbing
     {
-        return CurrentPlaneSpeed + (0.2f - CurrentPlaneSpeed) * DeltaNormalisedHeight * DeltaTime * AccelerationModifier;
+        CurrentSpeed = CurrentSpeed + (MinimumSpeed - CurrentSpeed) * DeltaNormalisedHeight * DeltaTime * AccelerationModifier;
     }
 }
 

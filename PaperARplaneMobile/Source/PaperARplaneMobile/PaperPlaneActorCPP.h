@@ -23,17 +23,25 @@ public:
 	// Called every frame
 	virtual void Tick(float DeltaTime) override;
     
-    // Base movement speed
+    // Airplane movement speed variables
     UPROPERTY(BlueprintReadWrite, Category = movementSpeed)
     float CurrentSpeed = 0.5f;
-
-    // Used to pick a target spawn position
-    UPROPERTY(BlueprintReadWrite, Category = targetSpawning)
-    FVector SpawnPositionRefOne = FVector(0.0f, 0.0f, 0.0f);
-    UPROPERTY(BlueprintReadWrite, Category = targetSpawning)
-    FVector SpawnPositionRefTwo = FVector(0.0f, 0.0f, 0.0f);
+    UPROPERTY(BlueprintReadOnly, Category = movementSpeed)
+    float DefaultSpeed = CurrentSpeed;
+    float MaximumSpeed = 1.8f;
+    float MinimumSpeed = 0.2f;
+    // Rate of change of acceleration when diving or climbing
+    float AccelerationModifier = 1.2f;
     
-    // Is plane movement enabled
+    // Idle Circling speed, degrees per second
+    UPROPERTY(BlueprintReadWrite, Category = movementSpeed)
+    float DefaultIdleCirclingRate = 180.0f;
+    
+    // Initial value for lerping the current speed to default when idle
+    UPROPERTY(BlueprintReadWrite, Category = movementSpeed)
+    float IdleSpeedStartValue;
+    
+    // Is airplane movement enabled
     UPROPERTY(BlueprintReadWrite, Category = game)
     bool CanMove = false;
     
@@ -41,20 +49,19 @@ public:
     UPROPERTY(BlueprintReadWrite, Category = game)
     bool FlyToNewPosition = false;
     
-    // Timer used to dictate spawning of balloon targets
-    UPROPERTY(BlueprintReadWrite, Category = game)
-    float GameTimer = 0.0f;
-    
     // Plane roll angle when circling in idle state
     UPROPERTY(BlueprintReadOnly, Category = game)
     float IdleBankingAngle = 40.0f;
     
-    // Returns new speed based on whether the plane is diving or climbing
-    UFUNCTION(BlueprintCallable, Category = movementSpeed)
-    float GetHeightAdjustedSpeed(float DeltaNormalisedHeight, float CurrentPlaneSpeed, float DeltaTime, float AccelerationModifier);
+    // Tolerence for distance check if arrived at destination
+    UPROPERTY(BlueprintReadOnly, Category = game)
+    float ArrivalDistanceTolerence = 2.0f;
     
-    // Rate of change of acceleration when diving or climbing
-    UPROPERTY(BlueprintReadWrite, Category = movementSpeed)
-    float AccelerationModifier = 1.2f;
+    
+    // Changes current speed based on whether the plane is diving or climbing
+    UFUNCTION(BlueprintCallable, Category = movementSpeed)
+    void AdjustSpeedFromHeightChange(float DeltaNormalisedHeight, float DeltaTime);
+    
+    
 	
 };
