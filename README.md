@@ -2,6 +2,9 @@
 
 ## paper AR plane
 
+!(https://github.com/Stompyy/COMP210_2_interace_task/blob/master/PaperARplaneMobile/comp210/PARLogo.png)  
+!(https://github.com/Stompyy/COMP210_2_interace_task/blob/master/PaperARplaneMobile/comp210/PaperARplaneMobile/Pap180.png)  
+
 ### Videos
 
 Included a couple of videos. The important one is the PreReleaseBuild one which shows the augmented reality menu, where the screen is slowly folded away revealing the camera feed behind (sorry the audio is slightly out of sync, blame apple's new screen recording feature).  
@@ -17,12 +20,12 @@ I sourced audio from https://www.bensound.com/ 'cute.wav', free to use on commer
 
 The game is calle 'paper AR plane', and requires the player to collect red balloons in the environment before a timer runs out. Collect enough and the player goes up a level, with either more balloons to collect, or less time to do so in.  High scores and last scores are saved. There are also power up ballons in purple and yellow, which will slow down and speed up the player respectively.  Strong colours, simple themes, and definitely the audio, suit this game towards children under 14 years of age.
 
-The game is built in Unreal Engine using C++ and blueprints and uses apple's ARKIT plugin to use the depth sensing capability of the latest apple device's camera, to retrieve a real world location of a position on screen. Currently this is limited to horizontal planes, but is very accurate.  
+The game is built in Unreal Engine using C++ and blueprints and uses apple's ARKIT plugin to use the depth sensing capability of the latest apple device's camera, to retrieve a real world location of a position on screen. Currently this is limited to horizontal planes, and is very accurate.  
 I use this to firstly place a target position for the airplane to fly towards, with a given offset of flight height.  
 Secondly to spawn in the balloons. This is not at a single point, rather a random point between two random locations, so the balloon will not always be at a point, BUT will be at an attainable position by flying between two points. This brings a puzzle aspect to the game where the player must look at the surroundings to work out between which high and low positions they must guide the airplane between, in order to get the collectible. The random position between the two is actually weighted on a bell curve, to encourage more 'middle' positions, to get the height difference needed to draw out this challenge in the game.  
-Lastly when a ballon is collected, an audio sound is played. ARKIT will probe that balloon's location to see if there is any obstruction (the balloon is behind a chair for example), and adjust the volume suitably. This is not a perfect solution for spatialised sound, but I think a novel use of ARKIT, given it's limit to horizontal planes.
+Lastly when a balloon is collected, an audio sound is played. ARKIT will probe that balloon's location to see if there is any obstruction (the balloon is behind a chair for example), and adjust the volume suitably. This is not a perfect solution for spatialised sound, but I think a novel use of ARKIT, given it's limit to horizontal planes.
 
-The largest challenges were to do with deploying to apple devices.  Maintaining the correct certificates, keys, id's, and profiles, is not as straightforward as it may seem. One incorrect entry in the info.plist can and have required complete rebuilds.
+The largest challenges were to do with deploying to apple devices.  Maintaining the correct certificates, keys, id's, and profiles, is not as straightforward as it may seem. One incorrect entry in the info.plist can, and have, required complete rebuilds.
 
 ## Research
 
