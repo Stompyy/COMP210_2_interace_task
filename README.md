@@ -2,8 +2,8 @@
 
 ## paper AR plane
 
-!(https://github.com/Stompyy/COMP210_2_interace_task/blob/master/PaperARplaneMobile/comp210/PARLogo.png)  
-!(https://github.com/Stompyy/COMP210_2_interace_task/blob/master/PaperARplaneMobile/comp210/PaperARplaneMobile/Pap180.png)  
+![logo](https://github.com/Stompyy/COMP210_2_interace_task/blob/master/PaperARplaneMobile/comp210/PARLogo.png)  
+![app icon](https://github.com/Stompyy/COMP210_2_interace_task/blob/master/PaperARplaneMobile/comp210/PaperARplaneMobile/Pap180.png)  
 
 ### Videos
 
